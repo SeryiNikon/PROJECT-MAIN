@@ -1,0 +1,12 @@
+{% block content %}
+<h2>Регистрация</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Зарегистрироваться">
+</form>
+
+<a href="{% url 'login' %}">Вернуться на страницу авторизации</a><br>
+<a href="{% url 'home' %}">Вернуться к приветствию</a>
+{% endblock %}

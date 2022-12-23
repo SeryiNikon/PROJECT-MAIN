@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <style>
+     body {
+      color: blue;
+      text-align: center;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <h1>Привет, {{ user.username|default:'Гость' }}</h1>
+
+    <p>Добро пожаловать на наш сайт</p>
+    <div>
+      {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}">Выйти</a>
+
+      {% else %}
+          <a href="{% url 'signup' %}">Зарегистрироваться</a>
+          <a href="{% url 'login' %}">Авторизоваться</a>
+      {% endif %}
+  </div>
+    <a href="/">На главную</a>
+  </body>
+</html>
